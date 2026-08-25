@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #09090b;
+  --surface: #111113;
+  --surface-hover: #18181b;
+  --border: #27272a;
+
+  --text: #fafafa;
+  --muted: #a1a1aa;
+
+  --primary: #7c3aed;
+}
+
+* {
+  transition: 0.25s all;
+  scrollbar-width: none;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  padding-block: calc(var(--spacing) * 2);
+  padding-inline: calc(var(--spacing) * 3);
+  font-family: var(--font-vazir), var(--font-geist-sans);
+}
