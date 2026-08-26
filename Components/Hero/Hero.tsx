@@ -1,4 +1,12 @@
-import { ArrowLeft, Dot, User2 } from "lucide-react";
+import {
+  ArrowLeft,
+  Code2,
+  Dot,
+  Gauge,
+  Server,
+  ShieldCheck,
+  User2,
+} from "lucide-react";
 import Badge from "../Badge/Badge";
 import CodeCard from "./CodeCard";
 import Button from "../Button/Button";
@@ -43,8 +51,50 @@ export default function HeroArea() {
         </div>
       </div>
 
-      <div className="w-full mt-5 absolute right-0 bg-(--surface) border-y border-(--border) Container">
-        
+      <div className="w-full flex flex-col justify-around lg:flex-row gap-5 mt-5 absolute right-0 bg-(--surface) border-y border-(--border) Container">
+        <div className="w-full lg:w-max flex justify-start gap-2">
+          <Gauge className="text-(--primary)" />
+
+          <div className="flex flex-col gap-2">
+            <h3>سرعت و عملکرد</h3>
+            <p className="text-[13px] text-(--muted) max-w-[70%]">
+              بهینه سازی برای سرعت بارگذاری و عملکرد بهتر
+            </p>
+          </div>
+        </div>
+
+        <div className="w-full lg:w-max flex justify-end gap-2">
+          <Code2 className="text-(--primary)" />
+
+          <div className="flex flex-col gap-2">
+            <h3>توسعه مدرن</h3>
+            <p className="text-[13px] text-(--muted) max-w-[70%]">
+              توسعه با تکنولوژی‌های مدرن و استانداردهای روز وب
+            </p>
+          </div>
+        </div>
+
+        <div className="w-full lg:w-max flex justify-start gap-2">
+          <Server className="text-(--primary)" />
+
+          <div className="flex flex-col gap-2">
+            <h3>توسعه Full-Stack</h3>
+            <p className="text-[13px] text-(--muted) max-w-[70%]">
+              پیاده‌سازی کامل Frontend، Backend، API و دیتابیس
+            </p>
+          </div>
+        </div>
+
+        <div className="w-full lg:w-1/5 flex justify-end gap-2">
+          <ShieldCheck className="text-(--primary)" />
+
+          <div className="flex flex-col gap-2">
+            <h3>کدنویسی اصولی</h3>
+            <p className="text-[13px] text-(--muted) text-justify">
+              کد تمیز، ساختار قابل توسعه و توجه به امنیت پروژه
+            </p>
+          </div>
+        </div>
       </div>
     </>
   );
