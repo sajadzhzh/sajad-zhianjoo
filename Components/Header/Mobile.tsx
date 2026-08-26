@@ -1,6 +1,5 @@
 import Link from "next/link";
-import Button from "../Button/Button";
-import { Menu, TextAlignStart } from "lucide-react";
+import Menu from "./Menu/Menu";
 
 export default function Mobile() {
   return (
@@ -12,9 +11,7 @@ export default function Mobile() {
       </Link>
 
       <div className="w-15">
-        <Button theme="normal">
-            <TextAlignStart size={24}/>
-        </Button>
+        <Menu />
       </div>
     </header>
   );

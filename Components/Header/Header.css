@@ -22,5 +22,11 @@
 
   @media (width < 1024) {
     padding-inline: calc(var(--spacing) * 5);
+
+    .item{
+      width: 100%;
+      border-bottom: 1px solid var(--border);
+      border-radius: 0;
+    }
   }
 }

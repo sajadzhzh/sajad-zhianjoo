@@ -1,5 +1,7 @@
 import Link from "next/link";
+import HeaderItems from "./items";
 import Button from "../Button/Button";
+import { Handshake } from "lucide-react";
 
 export default function Desktop() {
   return (
@@ -11,25 +13,14 @@ export default function Desktop() {
       </Link>
 
       <div className="flex gap-3 items-center text-[13px]">
-        <Link href={""} className="item active">
-          خانه
-        </Link>
-        <Link href={""} className="item">
-          درباره‌من
-        </Link>
-        <Link href={""} className="item">
-          مهارت‌ها
-        </Link>
-        <Link href={""} className="item">
-          نمونه کار‌ها
-        </Link>
-        <Link href={""} className="item">
-          تماس با من
-        </Link>
+        <HeaderItems />
       </div>
 
       <div className="w-40">
-        <Button theme="primary">همکاری با من</Button>
+        <Button theme="primary">
+          <Handshake size={20} />
+          همکاری با من
+        </Button>
       </div>
     </header>
   );
