@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
-<<<<<<< HEAD
-import { Geist, Geist_Mono } from "next/font/google";
-=======
 import { Geist, Vazirmatn } from "next/font/google";
->>>>>>> cfa9e34 (Project initialized)
 import "./globals.css";
 import Header from "@/Components/Header/Index";
 
@@ -12,15 +8,9 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-<<<<<<< HEAD
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-=======
 const vazir = Vazirmatn({
   variable: "--font-vazir",
   subsets: ["arabic"],
->>>>>>> cfa9e34 (Project initialized)
 });
 
 export const metadata: Metadata = {
@@ -31,12 +21,6 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-<<<<<<< HEAD
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
-=======
       lang="fa"
       dir="rtl"
       className={`${geistSans.variable} ${vazir.variable} h-full`}
