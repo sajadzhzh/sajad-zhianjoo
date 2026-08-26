@@ -14,7 +14,7 @@ import Button from "../Button/Button";
 export default function HeroArea() {
   return (
     <>
-      <div className="flex flex-col lg:flex-row items-center gap-4 mt-5">
+      <div className="Container flex flex-col lg:flex-row items-center gap-4 mt-5">
         <div className="w-full lg:w-1/2 flex flex-col gap-4 items-center lg:items-start">
           <Badge className="w-max text-[13px] flex items-center">
             <Dot className="text-green-500" size={20} />
@@ -26,13 +26,13 @@ export default function HeroArea() {
             <span className="text-(--primary)">مدرن و حرفه‌ای</span>
           </h1>
 
-          <p className="text-[14px] text-justify lg:max-w-[66%] text-(--muted)">
+          <p className="text-[14px] text-justify max-w-4/5 text-(--muted)">
             من سجاد هستم، توسعه‌دهنده Full Stack با تمرکز بر Frontend. به ساخت
             رابط‌های کاربری مدرن، سریع و واکنش‌گرا علاقه‌مندم و در کنار آن تجربه
             توسعه Backend، API و دیتابیس را نیز دارم.
           </p>
 
-          <div className="w-full flex flex-col lg:flex-row gap-2">
+          <div className="w-2/3 lg:w-full flex flex-col lg:flex-row gap-2">
             <Button
               theme="normal"
               className="border border-(--border) hover:bg-(--surface-hover)"
@@ -46,13 +46,13 @@ export default function HeroArea() {
             </Button>
           </div>
         </div>
-        <div className="w-full lg:w-1/2">
+        <div className="w-full lg:w-1/2 flex items-center justify-center">
           <CodeCard />
         </div>
       </div>
 
-      <div className="w-full flex flex-col justify-around lg:flex-row gap-5 mt-5 absolute right-0 bg-(--surface) border-y border-(--border) Container">
-        <div className="w-full lg:w-max flex justify-start gap-2">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-around gap-5 bg-(--surface) border-y border-(--border) Container">
+        <div className=" flex gap-2">
           <Gauge className="text-(--primary)" />
 
           <div className="flex flex-col gap-2">
@@ -63,7 +63,7 @@ export default function HeroArea() {
           </div>
         </div>
 
-        <div className="w-full lg:w-max flex justify-end gap-2">
+        <div className=" flex gap-2">
           <Code2 className="text-(--primary)" />
 
           <div className="flex flex-col gap-2">
@@ -74,7 +74,7 @@ export default function HeroArea() {
           </div>
         </div>
 
-        <div className="w-full lg:w-max flex justify-start gap-2">
+        <div className=" flex gap-2">
           <Server className="text-(--primary)" />
 
           <div className="flex flex-col gap-2">
@@ -85,7 +85,7 @@ export default function HeroArea() {
           </div>
         </div>
 
-        <div className="w-full lg:w-1/5 flex justify-end gap-2">
+        <div className=" flex gap-2">
           <ShieldCheck className="text-(--primary)" />
 
           <div className="flex flex-col gap-2">

@@ -1,0 +1,24 @@
+.project-item {
+  width: 24rem;
+  height: 30rem;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--spacing) * 5);
+  background: var(--surface);
+  scroll-snap-align: center;
+  position: relative;
+  flex: 0 0 24rem;
+
+    img{
+        height: 50%;
+        border-radius: calc(var(--spacing) * 5) calc(var(--spacing) * 5) 0 0;
+    }
+
+  &:hover{
+    transform: translateY(-0.25rem);
+    background: var(--surface-hover);
+  }
+  @media (width < 640) {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+}
