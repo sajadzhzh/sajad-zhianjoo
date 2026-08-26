@@ -20,7 +20,5 @@
 body {
   background: var(--bg);
   color: var(--text);
-  padding-block: calc(var(--spacing) * 2);
-  padding-inline: calc(var(--spacing) * 3);
   font-family: var(--font-vazir), var(--font-geist-sans);
 }

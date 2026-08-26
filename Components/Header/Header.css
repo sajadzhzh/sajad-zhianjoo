@@ -1,0 +1,26 @@
+.header {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding-block: calc(var(--spacing) * 3);
+  padding-inline: calc(var(--spacing) * 15);
+
+  .item {
+    padding-block: calc(var(--spacing) * 1);
+    padding-inline: calc(var(--spacing) * 2);
+    border-radius: calc(var(--spacing) * 5);
+
+    &:hover {
+      background: var(--surface-hover);
+    }
+    &.active {
+      color: var(--primary);
+    }
+  }
+
+  @media (width < 1024) {
+    padding-inline: calc(var(--spacing) * 5);
+  }
+}
