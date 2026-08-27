@@ -8,7 +8,7 @@ export default function Badge({
   className?: string;
 }) {
   return (
-    <div className={`min-w-max px-4 py-1 bg-(--surface-hover) border border-(--border) rounded-xl ${className}`}>
+    <div className={`min-w-max px-2 py-1 bg-(--surface-hover) border border-(--border) rounded-xl ${className}`}>
       {children}
     </div>
   );
