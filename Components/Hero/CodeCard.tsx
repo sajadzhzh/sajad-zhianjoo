@@ -31,7 +31,7 @@ export default function CodeCard() {
           <span className="text-blue-300">role</span>
           <span className="text-zinc-400">:</span>{" "}
           <span className="text-orange-300">
-            "Frontend Developer"
+            "FullStack Developer"
           </span>
           <span className="text-zinc-400">,</span>
         </div>
@@ -40,7 +40,7 @@ export default function CodeCard() {
           <span className="text-blue-300">focus</span>
           <span className="text-zinc-400">:</span>{" "}
           <span className="text-orange-300">
-            "UI/UX & Web Development"
+            "Programming & Web Development"
           </span>
           <span className="text-zinc-400">,</span>
         </div>
