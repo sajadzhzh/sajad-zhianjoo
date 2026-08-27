@@ -3,7 +3,7 @@ import { Handshake } from "lucide-react";
 
 export default function Collaboration() {
   return (
-    <div className="relative w-full xl:w-1/4 overflow-hidden rounded-xl border border-(--border) bg-(--surface) px-8 py-7">
+    <div className="relative flex items-center overflow-hidden rounded-xl border border-(--border) bg-(--surface) px-8 py-7">
       <div
         className="
       pointer-events-none

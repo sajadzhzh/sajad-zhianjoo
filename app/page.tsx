@@ -1,5 +1,6 @@
 import HeroArea from "@/Components/Hero/Hero";
 import Abilities from "@/Components/Info/Abilities/Index";
+import AboutMe from "@/Components/Info/AboutMe/Index";
 import Collaboration from "@/Components/Info/Collaboration/Index";
 import Projects from "@/Components/Projects/Projects";
 
@@ -10,10 +11,10 @@ export default function Home() {
 
       <Projects />
 
-      <div className="w-full Container flex gap-2">
+      <div className="w-full Container grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2">
         <Collaboration />
         <Abilities />
-        <div className="w-1/4 border"></div>
+        <AboutMe />
       </div>
     </div>
   );
