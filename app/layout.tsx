@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Vazirmatn } from "next/font/google";
 import "./globals.css";
 import Header from "@/Components/Header/Index";
+import Footer from "@/Components/Footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +26,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       dir="rtl"
       className={`${geistSans.variable} ${vazir.variable} h-full`}
     >
-      <body className="min-h-svh">
+      <body className="min-h-svh space-y-5">
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
