@@ -11,7 +11,7 @@ export default function Home() {
 
       <Projects />
 
-      <div className="w-full Container grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2">
+      <div className="w-full Container grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2" id="about_me">
         <Collaboration />
         <Abilities />
         <AboutMe />

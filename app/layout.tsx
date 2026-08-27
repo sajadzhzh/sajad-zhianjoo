@@ -26,7 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       dir="rtl"
       className={`${geistSans.variable} ${vazir.variable} h-full`}
     >
-      <body className="min-h-svh space-y-5">
+      <body className="min-h-svh nth-[first-child]:space-y-5">
         <Header />
         {children}
         <Footer />
