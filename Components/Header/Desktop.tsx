@@ -1,7 +1,6 @@
 import Link from "next/link";
 import HeaderItems from "./items";
-import Button from "../Button/Button";
-import { Handshake } from "lucide-react";
+import CollaborationButton from "../Collaboration/Collaboration";
 
 export default function Desktop() {
   return (
@@ -17,10 +16,7 @@ export default function Desktop() {
       </div>
 
       <div className="w-40">
-        <Button theme="primary">
-          <Handshake size={20} />
-          همکاری با من
-        </Button>
+        <CollaborationButton />
       </div>
     </header>
   );

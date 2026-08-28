@@ -1,11 +1,12 @@
 "use client";
 
 import Button from "@/Components/Button/Button";
-import { Handshake, TextAlignStart } from "lucide-react";
+import { TextAlignStart } from "lucide-react";
 import "./menu.css";
 import HeaderItems from "../items";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import CollaborationButton from "@/Components/Collaboration/Collaboration";
 
 export default function Menu() {
   const Ref = useRef<HTMLDivElement>(null);
@@ -55,12 +56,6 @@ export default function Menu() {
             </Link>
 
             <HeaderItems />
-          </div>
-          <div className="w-full">
-            <Button theme="primary">
-              <Handshake size={20} />
-              همکاری با من
-            </Button>
           </div>
         </div>
       </div>

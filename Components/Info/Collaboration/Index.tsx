@@ -1,5 +1,4 @@
-import Button from "@/Components/Button/Button";
-import { Handshake } from "lucide-react";
+import CollaborationButton from "@/Components/Collaboration/Collaboration";
 
 export default function Collaboration() {
   return (
@@ -27,10 +26,7 @@ export default function Collaboration() {
           واقعیت تبدیل کنم.
         </p>
 
-        <Button theme="primary">
-            <Handshake />
-            شروع همکاری
-        </Button>
+        <CollaborationButton />
       </div>
     </div>
   );
