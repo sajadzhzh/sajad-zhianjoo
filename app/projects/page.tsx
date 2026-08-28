@@ -6,7 +6,7 @@ export default function ProjectsPage() {
     <div className="w-full min-h-svh">
       <ProjectHero />
 
-      <div className="w-full Container grid justify-items-center grid-cols-1 min-[810px]:grid-cols-2 xl:grid-cols-3 gap-4">
+      <div className="w-full border-t border-(--border) Container grid justify-items-center grid-cols-1 min-[810px]:grid-cols-2 xl:grid-cols-3 gap-4">
         <ProjectItem />
         <ProjectItem />
         <ProjectItem />

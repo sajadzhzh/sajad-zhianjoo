@@ -1,3 +1,5 @@
+"use client"
+
 import {
   ArrowLeft,
   Code2,
@@ -10,8 +12,10 @@ import {
 import Badge from "../Badge/Badge";
 import CodeCard from "./CodeCard";
 import Button from "../Button/Button";
+import { useRouter } from "next/navigation";
 
 export default function HeroArea() {
+  const router = useRouter()
   return (
     <>
       <div className="Container flex flex-col lg:flex-row items-center gap-4 mt-5">
@@ -34,13 +38,14 @@ export default function HeroArea() {
 
           <div className="w-2/3 lg:w-full flex flex-col lg:flex-row gap-2">
             <Button
+            onClick={()=>router.push("/#contact")}
               theme="normal"
               className="border border-(--border) hover:bg-(--surface-hover)"
             >
               <User2 />
               تماس با من
             </Button>
-            <Button theme="primary">
+            <Button theme="primary" onClick={()=>router.push("/projects")}>
               <ArrowLeft />
               مشاهده پروژه‌ها
             </Button>

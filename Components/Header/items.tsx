@@ -10,7 +10,7 @@ export default function HeaderItems() {
       <Link href={"/"} className={path === "/" ? "item active" : "item"}>
         خانه
       </Link>
-      <Link href={"/#projects"} className={path === "/projects" ? "item active" : "item"}>
+      <Link href={"/#projects"} className={path.includes("/projects") ? "item active" : "item"}>
         نمونه کار‌ها
       </Link>
       <Link href={"/#about_me"} className={path === "/#about_me" ? "item active" : "item"}>

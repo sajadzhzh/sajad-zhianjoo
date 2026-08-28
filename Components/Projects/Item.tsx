@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function ProjectItem() {
   return (
-    <Link href={""} className="project-item">
+    <Link href={"/projects/1"} className="project-item">
       <Image src={post} alt="project" width={500} height={500} />
       <div className="flex flex-col gap-2 w-full px-3 py-2">
         <h2 className="text-[18px]">ویترینو</h2>
