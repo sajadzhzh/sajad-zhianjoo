@@ -7,9 +7,24 @@ import ProjectItem from "./Item";
 import "./project.css";
 import { useRouter } from "next/navigation";
 import { scrollAnimation } from "@/Helper/Animation";
+import { useEffect, useState } from "react";
+import { GetLatestProjects } from "@/Actions/Projects";
 
 export default function Projects() {
+  const [projects, setProjects] = useState([]);
   const router = useRouter();
+
+  useEffect(() => {
+    const request = async () => {
+      const res = await GetLatestProjects(6);
+
+      if (res.success) {
+        setProjects(res.data);
+      }
+    };
+    request();
+  }, []);
+  
   return (
     <div className="w-full Container" id="projects">
       <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
@@ -22,7 +37,10 @@ export default function Projects() {
           </p>
         </div>
 
-        <div className="w-2/3 lg:w-50 opacity-0" ref={scrollAnimation("fade-right")}>
+        <div
+          className="w-2/3 lg:w-50 opacity-0"
+          ref={scrollAnimation("fade-right")}
+        >
           <Button
             theme="normal"
             onClick={() => router.push("/projects")}
@@ -35,15 +53,7 @@ export default function Projects() {
       </div>
 
       <Carousel>
-        <ProjectItem />
-        <ProjectItem />
-        <ProjectItem />
-        <ProjectItem />
-        <ProjectItem />
-        <ProjectItem />
-        <ProjectItem />
-        <ProjectItem />
-        <ProjectItem />
+        {projects && projects.map((i, index) => <ProjectItem key={index} data={i}/>)}
       </Carousel>
     </div>
   );
