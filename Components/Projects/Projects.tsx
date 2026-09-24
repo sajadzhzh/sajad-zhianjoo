@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { ArrowLeft } from "lucide-react";
 import Button from "../Button/Button";
@@ -6,13 +6,14 @@ import Carousel from "../Carousel/Carousel";
 import ProjectItem from "./Item";
 import "./project.css";
 import { useRouter } from "next/navigation";
+import { scrollAnimation } from "@/Helper/Animation";
 
 export default function Projects() {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <div className="w-full Container" id="projects">
       <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
-        <div>
+        <div className="opacity-0" ref={scrollAnimation("fade-left")}>
           <p className="text-[14px] text-(--primary)">نمونه کار‌های من</p>
           <h2 className="text-[24px] font-bold">پروژه‌های منتخب</h2>
           <p className="text-[13px] text-(--muted)">
@@ -21,10 +22,10 @@ export default function Projects() {
           </p>
         </div>
 
-        <div className="w-2/3 lg:w-50">
+        <div className="w-2/3 lg:w-50 opacity-0" ref={scrollAnimation("fade-right")}>
           <Button
             theme="normal"
-            onClick={()=> router.push("/projects")}
+            onClick={() => router.push("/projects")}
             className="text-[13px] border border-(--border) hover:bg-(--surface-hover)"
           >
             مشاهده همه پروژه‌ها

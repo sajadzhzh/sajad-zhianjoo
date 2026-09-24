@@ -1,3 +1,5 @@
+"use client"
+
 import ProjectHero from "@/Components/Hero/ProjectHero";
 import ProjectItem from "@/Components/Projects/Item";
 

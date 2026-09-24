@@ -1,8 +1,11 @@
+"use client"
+
 import CollaborationButton from "@/Components/Collaboration/Collaboration";
+import { scrollAnimation } from "@/Helper/Animation";
 
 export default function Collaboration() {
   return (
-    <div className="relative flex items-center overflow-hidden rounded-xl border border-(--border) bg-(--surface) px-8 py-7">
+    <div ref={scrollAnimation("fade-left")} className="opacity-0 relative flex items-center overflow-hidden rounded-xl border border-(--border) bg-(--surface) px-8 py-7">
       <div
         className="
       pointer-events-none

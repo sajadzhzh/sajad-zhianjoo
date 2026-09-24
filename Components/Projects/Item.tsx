@@ -4,10 +4,12 @@ import Link from "next/link";
 import post from "@/public/4.jpg";
 import Button from "../Button/Button";
 import { ArrowRight } from "lucide-react";
+import { scrollAnimation } from "@/Helper/Animation";
+import "./project.css"
 
 export default function ProjectItem() {
   return (
-    <Link href={"/projects/1"} className="project-item">
+    <Link href={"/projects/1"} className="project-item opacity-0" ref={scrollAnimation("fade-up")}>
       <Image src={post} alt="project" width={500} height={500} />
       <div className="flex flex-col gap-2 w-full px-3 py-2">
         <h2 className="text-[18px]">ویترینو</h2>

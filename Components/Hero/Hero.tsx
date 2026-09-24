@@ -19,7 +19,7 @@ export default function HeroArea() {
   return (
     <>
       <div className="Container flex flex-col lg:flex-row items-center gap-4 mt-5">
-        <div className="w-full lg:w-1/2 flex flex-col gap-4 items-center lg:items-start">
+        <div className="fade-left w-full lg:w-1/2 flex flex-col gap-4 items-center lg:items-start">
           <Badge className="w-max text-[13px] flex items-center">
             <Dot className="text-green-500" size={20} />
             در دسترس برای پروژه‌های جدید
@@ -51,13 +51,13 @@ export default function HeroArea() {
             </Button>
           </div>
         </div>
-        <div className="w-full lg:w-1/2 flex items-center justify-center">
+        <div className="fade-right w-full lg:w-1/2 flex items-center justify-center">
           <CodeCard />
         </div>
       </div>
 
-      <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-around gap-5 bg-(--surface) border-y border-(--border) Container">
-        <div className=" flex gap-2">
+      <div className="overflow-hidden w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-around gap-5 bg-(--surface) border-y border-(--border) Container">
+        <div className="fade-left flex gap-2">
           <Gauge className="text-(--primary)" />
 
           <div className="flex flex-col gap-2">
@@ -68,7 +68,7 @@ export default function HeroArea() {
           </div>
         </div>
 
-        <div className=" flex gap-2">
+        <div className="fade-up flex gap-2">
           <Code2 className="text-(--primary)" />
 
           <div className="flex flex-col gap-2">
@@ -79,7 +79,7 @@ export default function HeroArea() {
           </div>
         </div>
 
-        <div className=" flex gap-2">
+        <div className="fade-down flex gap-2">
           <Server className="text-(--primary)" />
 
           <div className="flex flex-col gap-2">
@@ -90,7 +90,7 @@ export default function HeroArea() {
           </div>
         </div>
 
-        <div className=" flex gap-2">
+        <div className="fade-right flex gap-2">
           <ShieldCheck className="text-(--primary)" />
 
           <div className="flex flex-col gap-2">

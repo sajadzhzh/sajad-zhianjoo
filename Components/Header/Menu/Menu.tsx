@@ -6,7 +6,6 @@ import "./menu.css";
 import HeaderItems from "../items";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import CollaborationButton from "@/Components/Collaboration/Collaboration";
 
 export default function Menu() {
   const Ref = useRef<HTMLDivElement>(null);
