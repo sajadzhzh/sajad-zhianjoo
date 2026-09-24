@@ -37,16 +37,36 @@ body:has(.menu.translate-x-0) {
   }
 }
 .fade-up {
-  animation: fade-up 2s;
+  @media (width > 768) {
+    animation: fade-up 2s;
+  }
+  @media (width < 768) {
+    animation: fade-up 2s;
+  }
 }
 .fade-down {
-  animation: fade-down 2s;
+  @media (width > 768) {
+    animation: fade-down 2s;
+  }
+  @media (width < 768) {
+    animation: fade-up 2s;
+  }
 }
 .fade-left {
-  animation: fade-left 2s;
+  @media (width > 768) {
+    animation: fade-left 2s;
+  }
+  @media (width < 768) {
+    animation: fade-up 2s;
+  }
 }
 .fade-right {
-  animation: fade-right 2s;
+  @media (width > 768) {
+    animation: fade-right 2s;
+  }
+  @media (width < 768) {
+    animation: fade-up 2s;
+  }
 }
 
 @keyframes fade-up {

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   ArrowLeft,
@@ -13,50 +13,95 @@ import Badge from "../Badge/Badge";
 import CodeCard from "./CodeCard";
 import Button from "../Button/Button";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { GetAboutMe, GetAvailable } from "@/Actions/SiteSettings";
+import Loading from "@/app/Loading";
 
 export default function HeroArea() {
-  const router = useRouter()
+  const [available, setAvailable] = useState(false);
+  const [header, setHeader] = useState("");
+  const [header_bold, setHeader_bold] = useState("");
+  const [about_me, setAbout_me] = useState("");
+  const [loading, setLoading] = useState(true);
+  const router = useRouter();
+
+  useEffect(() => {
+    const request = async () => {
+      const resAvailable = await GetAvailable();
+      const resAboutMe = await GetAboutMe();
+
+      if (resAvailable.success) {
+        setAvailable(resAvailable.data.is_available);
+      }
+      if (resAboutMe.success) {
+        setHeader(resAboutMe.data.header);
+        setHeader_bold(resAboutMe.data.header_bold);
+        setAbout_me(resAboutMe.data.about_me);
+      }
+
+      if (resAvailable.success && resAboutMe.success) {
+        setLoading(false);
+      }
+    };
+
+    request();
+  }, []);
+
   return (
     <>
       <div className="Container flex flex-col lg:flex-row items-center gap-4 mt-5">
-        <div className="fade-left w-full lg:w-1/2 flex flex-col gap-4 items-center lg:items-start">
-          <Badge className="w-max text-[13px] flex items-center">
-            <Dot className="text-green-500" size={20} />
-            در دسترس برای پروژه‌های جدید
-          </Badge>
+        {!loading && (
+          <>
+            <div className="fade-left w-full lg:w-1/2 flex flex-col gap-4 items-center lg:items-start">
+              {available && (
+                <Badge className="w-max text-[13px] flex items-center">
+                  <Dot className="text-green-500" size={20} />
+                  در دسترس برای پروژه‌های جدید
+                </Badge>
+              )}
 
-          <h1 className="text-[34px] font-bold">
-            ساخت تجربه‌های وب <br />
-            <span className="text-(--primary)">مدرن و حرفه‌ای</span>
-          </h1>
+              {header && (
+                <>
+                  <h1 className="text-[34px] font-bold">
+                    {header} <br />
+                    <span className="text-(--primary)">{header_bold}</span>
+                  </h1>
 
-          <p className="text-[14px] text-justify max-w-4/5 text-(--muted)">
-            من سجاد هستم، توسعه‌دهنده Full Stack با تمرکز بر Frontend. به ساخت
-            رابط‌های کاربری مدرن، سریع و واکنش‌گرا علاقه‌مندم و در کنار آن تجربه
-            توسعه Backend، API و دیتابیس را نیز دارم.
-          </p>
+                  <p className="text-[14px] text-justify max-w-4/5 text-(--muted)">
+                    {about_me}
+                  </p>
+                </>
+              )}
 
-          <div className="w-2/3 lg:w-full flex flex-col lg:flex-row gap-2">
-            <Button
-            onClick={()=>router.push("/#contact")}
-              theme="normal"
-              className="border border-(--border) hover:bg-(--surface-hover)"
-            >
-              <User2 />
-              تماس با من
-            </Button>
-            <Button theme="primary" onClick={()=>router.push("/projects")}>
-              <ArrowLeft />
-              مشاهده پروژه‌ها
-            </Button>
-          </div>
-        </div>
-        <div className="fade-right w-full lg:w-1/2 flex items-center justify-center">
-          <CodeCard />
-        </div>
+              <div className="w-2/3 lg:w-full flex flex-col lg:flex-row gap-2">
+                <Button
+                  onClick={() => router.push("/#contact")}
+                  theme="normal"
+                  className="border border-(--border) hover:bg-(--surface-hover)"
+                >
+                  <User2 />
+                  تماس با من
+                </Button>
+                <Button
+                  theme="primary"
+                  onClick={() => router.push("/projects")}
+                >
+                  <ArrowLeft />
+                  مشاهده پروژه‌ها
+                </Button>
+              </div>
+            </div>
+            <div className="fade-right w-full lg:w-1/2 flex items-center justify-center">
+              <CodeCard />
+            </div>
+          </>
+        )}
+
+        {loading && <div className="h-85 flex items-center justify-center w-full"><Loading /></div>}
       </div>
 
-      <div className="overflow-hidden w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-around gap-5 bg-(--surface) border-y border-(--border) Container">
+      {!loading && (
+        <div className="overflow-hidden w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-around gap-5 bg-(--surface) border-y border-(--border) Container">
         <div className="fade-left flex gap-2">
           <Gauge className="text-(--primary)" />
 
@@ -101,6 +146,7 @@ export default function HeroArea() {
           </div>
         </div>
       </div>
+      )}
     </>
   );
 }
