@@ -5,7 +5,7 @@ export default function Sort({
   items,
 }: {
   heading: string;
-  items?: string[];
+  items: string[];
 }) {
   return (
     <>
