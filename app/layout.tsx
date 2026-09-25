@@ -3,6 +3,7 @@ import { Geist, Vazirmatn } from "next/font/google";
 import "./globals.css";
 import Header from "@/Components/Header/Index";
 import Footer from "@/Components/Footer/Footer";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${vazir.variable} h-full`}
     >
       <body className="min-h-svh nth-[first-child]:space-y-5">
+        <Toaster />
         <Header />
         {children}
         <Footer />
