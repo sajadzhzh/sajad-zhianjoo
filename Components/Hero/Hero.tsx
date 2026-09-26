@@ -97,7 +97,7 @@ export default function HeroArea() {
           </>
         )}
 
-        {loading && <div className="h-85 flex items-center justify-center w-full"><Loading /></div>}
+        {loading && <div className="h-svh flex items-center justify-center w-full"><Loading /></div>}
       </div>
 
       {!loading && (

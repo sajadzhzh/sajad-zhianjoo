@@ -7,6 +7,8 @@ import { FaGithub } from "react-icons/fa";
 import post from "@/public/4.jpg";
 import { useEffect, useState } from "react";
 import { GetProjectById } from "@/Actions/Projects";
+import Loading from "@/app/Loading";
+import { scrollAnimation } from "@/Helper/Animation";
 
 type ProjectType = {
   name: string;
@@ -44,7 +46,7 @@ export default function Details({ id }: { id: string }) {
       {project && (
         <>
           <div className="Container w-full lg:h-[50svh] grid grid-cols-1 items-center lg:grid-cols-2 gap-8">
-            <div className="flex flex-col gap-6 order-2 lg:order-1">
+            <div className="flex flex-col gap-6 order-2 lg:order-1" ref={scrollAnimation("fade-left")}>
               <div className="flex flex-col">
                 <h1 className="flex gap-2 items-center text-[24px] font-bold">
                   <div className="border-4 border-(--primary) rounded-full"></div>
@@ -79,7 +81,7 @@ export default function Details({ id }: { id: string }) {
               </div>
             </div>
 
-            <div className="flex items-center justify-center rounded-xl order-1 lg:order-2">
+            <div className="flex items-center justify-center rounded-xl order-1 lg:order-2" ref={scrollAnimation("fade-right")}>
               <Image
                 src={`${process.env.NEXT_PUBLIC_API_SERVER_URL}${project?.thumbnail}`}
                 alt="Project"
@@ -100,12 +102,15 @@ export default function Details({ id }: { id: string }) {
                 width={500}
                 height={500}
                 unoptimized
-                className="size-[90%] rounded-xl"
+                className="size-[90%] rounded-xl opacity-0"
+                ref={scrollAnimation("fade-up")}
               />
             ))}
           </div>
         </>
       )}
+
+      {loading && <div className="h-svh w-full flex items-center justify-center"><Loading /></div>}
     </div>
   );
 }

@@ -1,3 +1,7 @@
+"use client"
+
+import { scrollAnimation } from "@/Helper/Animation";
+
 export default function ProjectHero(){
     return(
         <section className="relative w-full overflow-hidden py-20 lg:py-28">
@@ -19,11 +23,11 @@ export default function ProjectHero(){
         />
 
         <div className="Container relative z-10 flex flex-col items-center text-center">
-          <span className="mb-4 text-sm font-medium text-(--primary)">
+          <span className="mb-4 text-sm font-medium text-(--primary)" ref={scrollAnimation("fade-down")}>
             پروژه‌های من
           </span>
 
-          <h1 className="max-w-3xl text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+          <h1 className="max-w-3xl text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl" ref={scrollAnimation("fade-up")}>
             پروژه‌هایی که
             <span className="text-(--primary)"> ساخته‌ام</span>
           </h1>
@@ -38,6 +42,7 @@ export default function ProjectHero(){
             opacity-60
             sm:text-base
           "
+          ref={scrollAnimation("fade-down")}
           >
             مجموعه‌ای از پروژه‌هایی که در مسیر یادگیری و توسعه ساخته‌ام؛ از
             رابط‌های کاربری مدرن تا اپلیکیشن‌های Full-Stack.
